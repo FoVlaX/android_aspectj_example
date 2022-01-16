@@ -6,13 +6,13 @@ buildscript {
     }
 
     dependencies {
-        classpath 'org.aspectj:aspectjtools:1.9.5'
+        classpath "org.aspectj:aspectjtools:$aspectjtools_version"
     }
 }
 
 
 dependencies {
-    implementation 'org.aspectj:aspectjrt:1.9.5'
+    implementation "org.aspectj:aspectjrt:$aspectjtools_version"
     implementation project(':amp-runtime')
 }
 
