@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ViewPagerProject</string>
+    <string name="remove_string">Remove Fragment</string>
+</resources>
