@@ -46,32 +46,6 @@ public class TraceAspect {
         }
     }
 
-    /**
-     * Create a log message.
-     *
-     *
-     *
-     * @param threadInfo Thread details
-     * @param className Name of the containing class
-     * @param methodName A string with the method name.
-     * @param methodDuration Duration of the method in milliseconds.
-     * @return A string representing message.
-     */
-    private static String buildLogMessage(String threadInfo, String className, String methodName, long methodDuration) {
-        StringBuilder message = new StringBuilder();
-        message.append("Time Consumed for --> ");
-        message.append(className);
-        message.append(" in "+threadInfo +" ");
-        message.append(methodName);
-        message.append(" --> ");
-        message.append("[");
-        message.append(methodDuration);
-        message.append("ms");
-        message.append("]");
-
-        return message.toString();
-    }
-
     public static TraceAspect aspectOf() {
         return new TraceAspect();
     }
