@@ -17,19 +17,6 @@ import okhttp3.Request;
 @Aspect
 public class TraceAspect {
 
-    @Pointcut("execution(* *(..))")
-    private void anyOperation() {}
-
-    @Pointcut("execution(* okhttp3..*(..))")
-    private void inApplicationPackage() {}
-
-    @Pointcut("execution(* com.amp.app.featuremodule..*.*(..))")
-    private void inFeatureModule() {}
-
-    @Pointcut("anyOperation() && (inApplicationPackage() || inFeatureModule())")
-    private void execute() {}
-
-
     @Around("call(* okhttp3.OkHttpClient.newCall(..))")
     public Object weaveJoinPoint(ProceedingJoinPoint joinPoint) throws Throwable {
         try {
